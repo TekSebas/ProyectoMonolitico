@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="empleados">
+            <h2><span jhiTranslate="empresaEmpleadosApp.empleados.detail.title">Empleados</span> {{empleados.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="empresaEmpleadosApp.empleados.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{empleados.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="empresaEmpleadosApp.empleados.apellido">Apellido</span></dt>
+                <dd>
+                    <span>{{empleados.apellido}}</span>
+                </dd>
+                <dt><span jhiTranslate="empresaEmpleadosApp.empleados.dni">Dni</span></dt>
+                <dd>
+                    <span>{{empleados.dni}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/empleados', empleados.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
